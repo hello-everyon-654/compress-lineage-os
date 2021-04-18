@@ -22,8 +22,8 @@ jobs:
         run: |
           echo "Free space:"
           df -h
-          curl https://storage.googleapis.com/git-repo-downloads/repo > repo
-          chmod a+x repo
+          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+          chmod a+x ~/bin/repo
           git config --global user.email "hello-everyone-654@outlook.com"
           git config --global user.name "Hello Everyone 654"
           repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-17.1
