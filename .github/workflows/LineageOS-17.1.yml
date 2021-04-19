@@ -31,8 +31,8 @@ jobs:
           df -h
           sudo apt list --installed
           
-       - name: Setup repo
-         run: |
+     - name: Setup repo
+       run: |
            mkdir bin
            curl https://storage.googleapis.com/git-repo-downloads/repo > bin/repo
            chmod a+x bin/repo
@@ -40,13 +40,13 @@ jobs:
            git config --global user.email "hello-everyone-654@outlook.com"
            git config --global user.name "Hello Everyone 654"
           
-         - name: Clone Repo
-           run: |
+     - name: Clone Repo
+       run: |
            repo --trace init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-17.1
            repo --trace sync  -f --force-sync --no-clone-bundle --no-tags -j20
           
-         - name: Report Free Space
-           run: |
+     - name: Report Free Space
+       run: |
            echo "Git packfiles size :"
            du -sh **/.git
            #echo "Tar compressed size (No gitpackfiles) :"
