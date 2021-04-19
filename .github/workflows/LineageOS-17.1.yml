@@ -30,3 +30,6 @@ jobs:
           git config --global user.name "Hello Everyone 654"
           repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-17.1
           repo sync  -f --force-sync --no-clone-bundle --no-tags
+          find .
+          du -sh .
+          df -h
