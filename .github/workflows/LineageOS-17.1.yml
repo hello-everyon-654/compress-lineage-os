@@ -29,7 +29,7 @@ jobs:
           git config --global user.email "hello-everyone-654@outlook.com"
           git config --global user.name "Hello Everyone 654"
           repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-17.1
-          repo sync  -f --force-sync --no-clone-bundle --no-tags
+          repo sync  -f --force-sync --no-clone-bundle --no-tags -j20
           find .
           echo "Git packfiles size :"
           du -sh **/.git
