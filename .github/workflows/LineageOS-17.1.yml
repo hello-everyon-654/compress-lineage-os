@@ -39,9 +39,6 @@ jobs:
            export PATH=${PATH}:${PWD}/bin
            git config --global user.email "hello-everyone-654@outlook.com"
            git config --global user.name "Hello Everyone 654"
-          
-     - name: Clone Repo
-       run: |
            repo --trace init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-17.1
            repo --trace sync  -f --force-sync --no-clone-bundle --no-tags -j20
           
