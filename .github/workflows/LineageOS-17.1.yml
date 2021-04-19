@@ -30,10 +30,9 @@ jobs:
           git config --global user.name "Hello Everyone 654"
           repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-17.1
           repo sync  -f --force-sync --no-clone-bundle --no-tags -j20
-          find .
           echo "Git packfiles size :"
           du -sh **/.git
           echo "Tar compressed size (No gitpackfiles) :"
-          tar --exclude="**/.git" -cJ . | wc -c
+          tar --exclude="**/.git" -c -I 'xz -6 -T0' . | wc -c
           echo "Free space :"
           df -h
