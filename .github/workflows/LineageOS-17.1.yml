@@ -31,5 +31,9 @@ jobs:
           repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-17.1
           repo sync  -f --force-sync --no-clone-bundle --no-tags
           find .
-          du -sh .
+          echo "Git packfiles size :"
+          du -sh **/.git
+          echo "Tar compressed size (No gitpackfiles) :"
+          tar --exclude="**/.git" -cJ . | wc -c
+          echo "Free space :"
           df -h
